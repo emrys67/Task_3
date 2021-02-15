@@ -1,6 +1,5 @@
-public class AnagramTwo {
+public class Anagram {
     public String getAnagram(String input){
-        String output = null;
         String inputArray[] = input.split(" ");
         String outputArray[] = new String[inputArray.length];
         for(int a = 0; a < inputArray.length;a++) {
@@ -23,7 +22,6 @@ public class AnagramTwo {
             }
             outputArray[a] = new String(chars_out);
         }
-        output = String.join(" ", outputArray);
-        return output;
+        return String.join(" ", outputArray);
     }
 }
