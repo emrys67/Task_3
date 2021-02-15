@@ -1,7 +1,10 @@
+import java.util.StringJoiner;
+
 public class Anagram {
     public String getAnagram(String input){
-        String inputArray[] = input.split(" ");
-        String outputArray[] = new String[inputArray.length];
+        final String space = " ";
+        String inputArray[] = input.split(space);
+        StringJoiner output = new StringJoiner(space);
         for(int a = 0; a < inputArray.length;a++) {
             int count = 0;
             char chars[] = new char[inputArray[a].length()];
@@ -20,8 +23,8 @@ public class Anagram {
                 } else
                     chars_out[i] = inputArray[a].charAt(i);
             }
-            outputArray[a] = new String(chars_out);
+            output.add(new String(chars_out));
         }
-        return String.join(" ", outputArray);
+        return output.toString();
     }
 }
