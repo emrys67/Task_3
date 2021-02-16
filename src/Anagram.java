@@ -2,9 +2,9 @@ import java.util.StringJoiner;
 
 public class Anagram {
     public String getAnagram(String input){
-        final String space = " ";
-        String inputArray[] = input.split(space);
-        StringJoiner output = new StringJoiner(space);
+        final String SPACE = " ";
+        String inputArray[] = input.split(SPACE);
+        StringJoiner output = new StringJoiner(SPACE    );
         for(int a = 0; a < inputArray.length;a++) {
             int count = 0;
             char chars[] = new char[inputArray[a].length()];
