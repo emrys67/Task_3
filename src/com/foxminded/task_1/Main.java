@@ -1,3 +1,7 @@
+package com.foxminded.task_1;
+
+import com.foxminded.task_1.Anagram;
+
 public class Main {
     public static void main(String[] args) {
         Anagram anagram = new Anagram();
