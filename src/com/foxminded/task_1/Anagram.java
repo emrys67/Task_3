@@ -3,6 +3,7 @@ package com.foxminded.task_1;
 import java.util.StringJoiner;
 
 public class Anagram {
+    final String SPACE = " ";
     public String reverseWord(String input){
         int count = 0;
         char chars[] = new char[input.length()];
@@ -23,7 +24,6 @@ public class Anagram {
         }
         return new String(charsOut);
     }
-    final String SPACE = " ";
     public String getAnagram(String input){
         String inputArray[] = input.split(SPACE);
         StringJoiner output = new StringJoiner(SPACE);
