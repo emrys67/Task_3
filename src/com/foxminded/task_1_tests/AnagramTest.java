@@ -18,13 +18,13 @@ private Anagram anagram;
 
     @Test
     void reverseWord(){
-        String g = anagram.reverseWord("a1bcd");
-        assertEquals("d1cba", g);
+        String actual = anagram.reverseWord("a1bcd");
+        assertEquals("d1cba", actual);
     }
 
     @Test
     void getAnagram() {
-        String g = anagram.getAnagram("a1bcd efg!h");
-        assertEquals("d1cba hgf!e", g);
+        String actual = anagram.getAnagram("a1bcd efg!h");
+        assertEquals("d1cba hgf!e", actual);
     }
 }
