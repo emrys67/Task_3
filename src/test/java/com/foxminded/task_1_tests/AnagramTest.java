@@ -28,13 +28,13 @@ class AnagramTest {
     private static final String DIGITS_LETTERS_AND_SPECIAL_SYMBOLS_REVERSE = "d!1c2@b#3a$";
 
     @BeforeEach
-    void setUp(){
+    void setUp() {
         anagram = new Anagram();
     }
 
     @Test
     void getAnagramNull() {
-        Exception exception = assertThrows(IllegalArgumentException.class, ()->{
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             anagram.getAnagram(null);
         });
         String actual = exception.getMessage();
