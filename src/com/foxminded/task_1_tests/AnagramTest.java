@@ -31,6 +31,7 @@ class AnagramTest {
     void setUp(){
         anagram = new Anagram();
     }
+
     @Test
     void getAnagramNull() {
         Exception exception = assertThrows(IllegalArgumentException.class, ()->{
@@ -40,38 +41,47 @@ class AnagramTest {
         assertTrue(actual.contains(NULL_MESSAGE_EXPECT));
 
     }
+
     @Test
     void getAnagramEmpty() {
         assertEquals(EMPTY_SPACE_REVERSE, anagram.getAnagram(EMPTY_SPACE));
     }
+
     @Test
     void getAnagramDigits() {
         assertEquals(ONLY_DIGITS_REVERSE, anagram.getAnagram(ONLY_DIGITS));
     }
+
     @Test
     void getAnagramSymbols() {
         assertEquals(ONLY_SPECIAL_SYMBOLS_REVERSE, anagram.getAnagram(ONLY_SPECIAL_SYMBOLS));
     }
+
     @Test
     void getAnagramLetters() {
         assertEquals(ONLY_LETTERS_REVERSE, anagram.getAnagram(ONLY_LETTERS));
     }
+
     @Test
     void getAnagramLettersAndDigits() {
         assertEquals(LETTERS_AND_DIGITS_REVERSE, anagram.getAnagram(LETTERS_AND_DIGITS));
     }
+
     @Test
     void getAnagramSymbolsAndLetters() {
         assertEquals(LETTERS_AND_SPECIAL_SYMBOLS_REVERSE, anagram.getAnagram(LETTERS_AND_SPECIAL_SYMBOLS));
     }
+
     @Test
     void getAnagramSymbolsAndDigits() {
         assertEquals(DIGITS_AND_SPECIAL_SYMBOLS_REVERSE, anagram.getAnagram(DIGITS_AND_SPECIAL_SYMBOLS));
     }
+
     @Test
     void getAnagramSpecialSymbols() {
         assertEquals(ONLY_SPECIAL_SYMBOLS_REVERSE, anagram.getAnagram(ONLY_SPECIAL_SYMBOLS));
     }
+
     @Test
     void getAnagramLettersSymbolsAndDigits() {
         assertEquals(DIGITS_LETTERS_AND_SPECIAL_SYMBOLS_REVERSE, anagram.getAnagram(DIGITS_LETTERS_AND_SPECIAL_SYMBOLS));
