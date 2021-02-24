@@ -8,35 +8,72 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AnagramTest {
 
-private Anagram anagram;
+    private Anagram anagram;
+    private final static String NULL_MESSAGE_EXPECT = "Null input in Anagram.getAnagram()";
+    private final static String EMPTY_SPACE = "";
+    private final static String EMPTY_SPACE_REVERSE = "";
+    private final static String ONLY_LETTERS = "abcd";
+    private final static String ONLY_LETTERS_REVERSE = "dcba";
+    private final static String ONLY_DIGITS = "1234";
+    private final static String ONLY_DIGITS_REVERSE = "1234";
+    private final static String LETTERS_AND_DIGITS = "a1bcd";
+    private final static String LETTERS_AND_DIGITS_REVERSE = "d1cba";
+    private final static String ONLY_SPECIAL_SYMBOLS = "!@#$";
+    private final static String ONLY_SPECIAL_SYMBOLS_REVERSE = "!@#$";
+    private final static String DIGITS_AND_SPECIAL_SYMBOLS = "1!2@3#4$";
+    private final static String DIGITS_AND_SPECIAL_SYMBOLS_REVERSE = "1!2@3#4$";
+    private final static String LETTERS_AND_SPECIAL_SYMBOLS = "a!b@c#d$";
+    private final static String LETTERS_AND_SPECIAL_SYMBOLS_REVERSE = "d!c@b#a$";
+    private final static String DIGITS_LETTERS_AND_SPECIAL_SYMBOLS = "a!1b2@c#3d$";
+    private final static String DIGITS_LETTERS_AND_SPECIAL_SYMBOLS_REVERSE = "d!1c2@b#3a$";
 
     @BeforeEach
     void setUp(){
         anagram = new Anagram();
     }
     @Test
-    void getAnagramGeneral() {
-        String actual = anagram.getAnagram("a1bcd efg!h");
-        assertEquals("d1cba hgf!e", actual);
-    }
-    @Test
     void getAnagramNull() {
-        String actual = anagram.getAnagram("a1bcd efg!h");
-        assertEquals((Byte) null, null);
+        Exception exception = assertThrows(IllegalArgumentException.class, ()->{
+            anagram.getAnagram(null);
+        });
+        String actual = exception.getMessage();
+        assertTrue(actual.contains(NULL_MESSAGE_EXPECT));
+
     }
     @Test
     void getAnagramEmpty() {
-        String actual = anagram.getAnagram("a1bcd efg!h");
-        assertEquals("", "");
+        assertEquals(EMPTY_SPACE_REVERSE, anagram.getAnagram(EMPTY_SPACE));
     }
     @Test
     void getAnagramDigits() {
-        String actual = anagram.getAnagram("12345");
-        assertEquals("12345", actual);
+        assertEquals(ONLY_DIGITS_REVERSE, anagram.getAnagram(ONLY_DIGITS));
     }
     @Test
     void getAnagramSimbols() {
-        String actual = anagram.getAnagram("abcd");
-        assertEquals("dcba", actual);
+        assertEquals(ONLY_SPECIAL_SYMBOLS_REVERSE, anagram.getAnagram(ONLY_SPECIAL_SYMBOLS));
+    }
+    @Test
+    void getAnagramLetters() {
+        assertEquals(ONLY_LETTERS_REVERSE, anagram.getAnagram(ONLY_LETTERS));
+    }
+    @Test
+    void getAnagramLettersAndDigits() {
+        assertEquals(LETTERS_AND_DIGITS_REVERSE, anagram.getAnagram(LETTERS_AND_DIGITS));
+    }
+    @Test
+    void getAnagramSymbolsAndLetters() {
+        assertEquals(LETTERS_AND_SPECIAL_SYMBOLS_REVERSE, anagram.getAnagram(LETTERS_AND_SPECIAL_SYMBOLS));
+    }
+    @Test
+    void getAnagramSymbolsAndDigits() {
+        assertEquals(DIGITS_AND_SPECIAL_SYMBOLS_REVERSE, anagram.getAnagram(DIGITS_AND_SPECIAL_SYMBOLS));
+    }
+    @Test
+    void getAnagramSpecialSymbols() {
+        assertEquals(ONLY_SPECIAL_SYMBOLS_REVERSE, anagram.getAnagram(ONLY_SPECIAL_SYMBOLS));
+    }
+    @Test
+    void getAnagramLettersSymbolsAndDigits() {
+        assertEquals(DIGITS_LETTERS_AND_SPECIAL_SYMBOLS_REVERSE, anagram.getAnagram(DIGITS_LETTERS_AND_SPECIAL_SYMBOLS));
     }
 }

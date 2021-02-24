@@ -6,6 +6,9 @@ public class Anagram {
     private static final String SPACE = " ";
 
     public String getAnagram(String input){
+        if(input == null){
+            throw new IllegalArgumentException("Null input in Anagram.getAnagram()");
+        }
         String inputArray[] = input.split(SPACE);
         StringJoiner output = new StringJoiner(SPACE);
         for(int a = 0; a < inputArray.length;a++) {
