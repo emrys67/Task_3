@@ -49,7 +49,7 @@ class AnagramTest {
         assertEquals(ONLY_DIGITS_REVERSE, anagram.getAnagram(ONLY_DIGITS));
     }
     @Test
-    void getAnagramSimbols() {
+    void getAnagramSymbols() {
         assertEquals(ONLY_SPECIAL_SYMBOLS_REVERSE, anagram.getAnagram(ONLY_SPECIAL_SYMBOLS));
     }
     @Test
