@@ -9,23 +9,23 @@ import static org.junit.jupiter.api.Assertions.*;
 class AnagramTest {
 
     private Anagram anagram;
-    private final static String NULL_MESSAGE_EXPECT = "Null input in Anagram.getAnagram()";
-    private final static String EMPTY_SPACE = "";
-    private final static String EMPTY_SPACE_REVERSE = "";
-    private final static String ONLY_LETTERS = "abcd";
-    private final static String ONLY_LETTERS_REVERSE = "dcba";
-    private final static String ONLY_DIGITS = "1234";
-    private final static String ONLY_DIGITS_REVERSE = "1234";
-    private final static String LETTERS_AND_DIGITS = "a1bcd";
-    private final static String LETTERS_AND_DIGITS_REVERSE = "d1cba";
-    private final static String ONLY_SPECIAL_SYMBOLS = "!@#$";
-    private final static String ONLY_SPECIAL_SYMBOLS_REVERSE = "!@#$";
-    private final static String DIGITS_AND_SPECIAL_SYMBOLS = "1!2@3#4$";
-    private final static String DIGITS_AND_SPECIAL_SYMBOLS_REVERSE = "1!2@3#4$";
-    private final static String LETTERS_AND_SPECIAL_SYMBOLS = "a!b@c#d$";
-    private final static String LETTERS_AND_SPECIAL_SYMBOLS_REVERSE = "d!c@b#a$";
-    private final static String DIGITS_LETTERS_AND_SPECIAL_SYMBOLS = "a!1b2@c#3d$";
-    private final static String DIGITS_LETTERS_AND_SPECIAL_SYMBOLS_REVERSE = "d!1c2@b#3a$";
+    private static final String NULL_MESSAGE_EXPECT = "Null input in Anagram.getAnagram()";
+    private static final String EMPTY_SPACE = "";
+    private static final String EMPTY_SPACE_REVERSE = "";
+    private static final String ONLY_LETTERS = "abcd";
+    private static final String ONLY_LETTERS_REVERSE = "dcba";
+    private static final String ONLY_DIGITS = "1234";
+    private static final String ONLY_DIGITS_REVERSE = "1234";
+    private static final String LETTERS_AND_DIGITS = "a1bcd";
+    private static final String LETTERS_AND_DIGITS_REVERSE = "d1cba";
+    private static final String ONLY_SPECIAL_SYMBOLS = "!@#$";
+    private static final String ONLY_SPECIAL_SYMBOLS_REVERSE = "!@#$";
+    private static final String DIGITS_AND_SPECIAL_SYMBOLS = "1!2@3#4$";
+    private static final String DIGITS_AND_SPECIAL_SYMBOLS_REVERSE = "1!2@3#4$";
+    private static final String LETTERS_AND_SPECIAL_SYMBOLS = "a!b@c#d$";
+    private static final String LETTERS_AND_SPECIAL_SYMBOLS_REVERSE = "d!c@b#a$";
+    private static final String DIGITS_LETTERS_AND_SPECIAL_SYMBOLS = "a!1b2@c#3d$";
+    private static final String DIGITS_LETTERS_AND_SPECIAL_SYMBOLS_REVERSE = "d!1c2@b#3a$";
 
     @BeforeEach
     void setUp(){
